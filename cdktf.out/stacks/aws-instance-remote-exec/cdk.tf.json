@@ -1,0 +1,57 @@
+{
+  "//": {
+    "metadata": {
+      "backend": "remote",
+      "stackName": "aws-instance-remote-exec",
+      "version": "0.10.1"
+    },
+    "outputs": {
+      "aws-instance-remote-exec": {
+        "public_ip": "public_ip"
+      }
+    }
+  },
+  "output": {
+    "public_ip": {
+      "value": "${aws_instance.jacopen-compute.public_ip}"
+    }
+  },
+  "provider": {
+    "aws": [
+      {
+        "region": "ap-northeast-1"
+      }
+    ]
+  },
+  "resource": {
+    "aws_instance": {
+      "jacopen-compute": {
+        "//": {
+          "metadata": {
+            "path": "aws-instance-remote-exec/jacopen-compute",
+            "uniqueId": "jacopen-compute"
+          }
+        },
+        "ami": "ami-088da9557aae42f39",
+        "instance_type": "t2.micro"
+      }
+    }
+  },
+  "terraform": {
+    "backend": {
+      "remote": {
+        "hostname": "app.terraform.io",
+        "organization": "kusama",
+        "workspaces": {
+          "name": "aws-instance-remote-exec"
+        }
+      }
+    },
+    "required_providers": {
+      "aws": {
+        "source": "aws",
+        "version": "4.9.0"
+      }
+    }
+  }
+}

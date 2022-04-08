@@ -1,0 +1,13 @@
+{
+  "version": "0.10.1",
+  "stacks": {
+    "aws-instance-remote-exec": {
+      "name": "aws-instance-remote-exec",
+      "constructPath": "aws-instance-remote-exec",
+      "workingDirectory": "stacks/aws-instance-remote-exec",
+      "synthesizedStackPath": "stacks/aws-instance-remote-exec/cdk.tf.json",
+      "annotations": [],
+      "dependencies": []
+    }
+  }
+}
